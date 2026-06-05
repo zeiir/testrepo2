@@ -16,17 +16,17 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-			- name: 'Download Storage Flag'
-					run: |
-					  # 1. Download the file to a local path named 'flag_file.txt'
-					  az storage blob download \
-						--account-name iamazurelab3feb6aa5d\
-						--container-name flag \
-						--name flag.txt \
-						--file flag_file.txt \
-						--auth-mode login
+      - name: 'Download Storage Flag'
+        run: |
+          # 1. Download the file to a local path named 'flag_file.txt'
+          az storage blob download \
+            --account-name iamazurelab3feb6aa5d \
+            --container-name flag \
+            --name flag.txt \
+            --file flag_file.txt \
+            --auth-mode login
 
-					  # 2. Print the content of that file to the logs
-					  echo "--- THE FLAG IS BELOW ---"
-					  cat flag_file.txt
-					  echo "--- END OF FLAG ---"
+          # 2. Print the content of that file to the logs
+          echo "--- THE FLAG IS BELOW ---"
+          cat flag_file.txt
+          echo "--- END OF FLAG ---"
